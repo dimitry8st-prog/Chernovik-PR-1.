@@ -1,0 +1,1426 @@
+{
+  "schema_version": "FIRST_BUSINESS_DEMO_REPORT_V1",
+  "mode": "SIMULATION",
+  "real_business_evidence": false,
+  "live_outbound_enabled": false,
+  "clock": "fixed synthetic clock",
+  "outcomes": {
+    "alpha": {
+      "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+      "initial": {
+        "status": "PREPARED",
+        "action_id": "draft-c204c483bf327fea8b43b3b7027d9390ee50295ecbb87a4f64088e60153a5d37",
+        "simulation": true
+      },
+      "ack": {
+        "status": "MANAGER_ACCEPTED",
+        "simulation": true
+      }
+    },
+    "beta": {
+      "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+      "initial": {
+        "status": "PREPARED",
+        "action_id": "draft-313ebb43bbb564becd21fa5255e78c65bd18617d300d0e6487d7677387f809c1",
+        "simulation": true
+      },
+      "late_interest": {
+        "status": "ARCHIVED",
+        "intent": "INTEREST"
+      },
+      "followup": {
+        "status": "BLOCKED",
+        "reasons": [
+          "CONTACT_SUPPRESSED"
+        ]
+      }
+    },
+    "gamma": {
+      "lead_id": "be79e54f-80c6-5cfe-a914-060e3687341a",
+      "initial": {
+        "status": "BLOCKED",
+        "reasons": [
+          "LEAD_NOT_READY"
+        ]
+      }
+    },
+    "delta": {
+      "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+      "initial": {
+        "status": "PREPARED",
+        "action_id": "draft-8ce16e07038b0bcf27f0c553f64b0a8ebb48750d7a6ed2f0bcdc60f67d32c3f5",
+        "simulation": true
+      },
+      "followup": {
+        "status": "BLOCKED",
+        "reasons": [
+          "NO_CONFIRMED_DELIVERY_OR_DIALOGUE_PAUSED"
+        ]
+      }
+    },
+    "epsilon": {
+      "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+      "initial": {
+        "status": "PREPARED",
+        "action_id": "draft-c6bbbe3a1f40b6f9353953ff660f4923b0d5bf26b27632d5dfc99e7a410b867c",
+        "simulation": true
+      },
+      "followup": {
+        "status": "PREPARED",
+        "action_id": "draft-9203465d58c9a83ea7c01da740b0cdc9771ac68b2f82ad006eab1564a294c6c4",
+        "simulation": true
+      }
+    }
+  },
+  "metrics": {
+    "scope": "SIMULATION",
+    "real_business_evidence": false,
+    "period": {
+      "start": "2026-10-31T09:00:00+00:00",
+      "end": "2026-11-07T09:00:00+00:00"
+    },
+    "cohort": {
+      "identity": [
+        "campaign_id",
+        "lead_id"
+      ],
+      "ingestion_interval": "start <= first_ingestion < end",
+      "observation_interval": "first_ingestion <= occurred_at <= end"
+    },
+    "counts": {
+      "leads_ingested": 5,
+      "qualified_leads": 5,
+      "contacts_allowed": 4,
+      "drafts_prepared": 4,
+      "send_receipt_leads": 4,
+      "send_accepted": 0,
+      "send_delivered": 3,
+      "send_unknown": 1,
+      "ever_delivered_leads": 3,
+      "reply_observation_leads": 2,
+      "replied_leads": 2,
+      "auto_reply_leads": 0,
+      "uncertain_reply_leads": 0,
+      "unclassified_reply_leads": 0,
+      "replied_delivered_leads": 2,
+      "interested_leads": 1,
+      "interested_delivered_leads": 1,
+      "handoff_prepared": 1,
+      "handoff_accepted": 0,
+      "handoff_delivered": 1,
+      "handoff_unknown": 0,
+      "manager_accepted": 1,
+      "manager_declined": 0,
+      "handoff_escalated": 0,
+      "stopped_leads": 1,
+      "reviewed_interests": 0
+    },
+    "rates": {
+      "qualification": {
+        "numerator": 5,
+        "denominator": 5,
+        "value": 1.0
+      },
+      "contact_admission": {
+        "numerator": 4,
+        "denominator": 5,
+        "value": 0.8
+      },
+      "delivery": {
+        "numerator": 3,
+        "denominator": 4,
+        "value": 0.75
+      },
+      "reply": {
+        "numerator": 2,
+        "denominator": 3,
+        "value": 0.6666666666666666
+      },
+      "interest": {
+        "numerator": 1,
+        "denominator": 3,
+        "value": 0.3333333333333333
+      },
+      "manager_acceptance": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "false_interest": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      }
+    },
+    "receipt_observations": {
+      "SEND_RECEIPT": {
+        "ACCEPTED": 0,
+        "DELIVERED": 4,
+        "UNKNOWN": 1
+      },
+      "HANDOFF_RECEIPT": {
+        "ACCEPTED": 0,
+        "DELIVERED": 1,
+        "UNKNOWN": 0
+      }
+    },
+    "costs": {
+      "currency": "DEMO",
+      "total_amount": "1",
+      "by_category": {
+        "ai": "1"
+      },
+      "included_entries": 4,
+      "excluded_entries": 0,
+      "coverage": "Only supplied, lead-allocated cohort costs; no estimate of missing expenses.",
+      "per_qualified_lead": {
+        "numerator": "1",
+        "denominator": 5,
+        "value": "0.2",
+        "currency": "DEMO",
+        "division_precision": 28
+      },
+      "per_manager_accepted_lead": {
+        "numerator": "1",
+        "denominator": 1,
+        "value": "1",
+        "currency": "DEMO",
+        "division_precision": 28
+      }
+    },
+    "timing": {
+      "interest_to_handoff": {
+        "count": 1,
+        "median_seconds": 0.0,
+        "max_seconds": 0.0,
+        "pending_count": 0
+      },
+      "handoff_to_manager_acceptance": {
+        "count": 1,
+        "median_seconds": 120.0,
+        "max_seconds": 120.0,
+        "pending_count": 0
+      },
+      "interest_to_manager_acceptance": {
+        "count": 1,
+        "median_seconds": 120.0,
+        "max_seconds": 120.0,
+        "pending_count": 0
+      }
+    },
+    "observed_guards": {
+      "duplicate_outbound": {
+        "observed_count": 0,
+        "absence_guaranteed": false
+      },
+      "stop_violations": {
+        "observed_count": 0,
+        "absence_guaranteed": false
+      },
+      "history_loss": {
+        "observed_count": 0,
+        "absence_guaranteed": false
+      }
+    },
+    "targets": {
+      "qualification": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "contact_admission": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "delivery": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "reply": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "interest": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "manager_acceptance": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "false_interest": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "handoff_prepared": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "cost_per_qualified_lead": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "cost_per_manager_accepted_lead": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "interest_to_handoff": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "handoff_to_manager_acceptance": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "interest_to_manager_acceptance": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "duplicate_outbound": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "stop_violations": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      },
+      "history_loss": {
+        "value": null,
+        "status": "PENDING_APPROVAL"
+      }
+    },
+    "limitations": [
+      "Synthetic events and DEMO costs do not establish commercial performance.",
+      "Receipt projections are per lead, not per provider action or attempt.",
+      "No event or cost entry ID is required by this API; raw entries are not implicitly deduplicated.",
+      "Seven calendar days alone do not establish an adequate commercial sample."
+    ]
+  },
+  "snapshot": {
+    "mode": "SIMULATION",
+    "live_outbound_enabled": false,
+    "leads": [
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "contact_key": "ac303525f635090f059e1ca4d89ad2c6139a62c90bbf70bf327bbfc7063d979d",
+        "payload": {
+          "company_name": "SYNTHETIC company epsilon",
+          "company_size": 20,
+          "contact_id": "fixture:contact:epsilon",
+          "contact_role": "synthetic-owner",
+          "contact_verified": true,
+          "country": "ZZ",
+          "email": "epsilon@example.test",
+          "industry": "synthetic-automation",
+          "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+          "legal_basis": {
+            "approved": true,
+            "channel": "email",
+            "country": "ZZ",
+            "evidence_ref": "fixture:not-real-consent:epsilon",
+            "expires_at": "2027-01-01T00:00:00Z"
+          },
+          "source_observed_at": "2026-10-31T08:00:00Z",
+          "source_url": "fixture:source:epsilon",
+          "source_verified": true
+        },
+        "state": "WAITING_REPLY",
+        "qualified": 1,
+        "contact_allowed": 1,
+        "version": 2,
+        "created_at": "2026-10-31T09:00:00Z",
+        "first_outbound_at": "2026-10-31T09:00:10Z",
+        "last_outbound_at": "2026-10-31T09:00:10Z",
+        "followups": 0
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "contact_key": "d3f40a2c8886f1ce3f1edaef03fd7d30dd14c27b59aa914ae6187393ae843d34",
+        "payload": {
+          "company_name": "SYNTHETIC company beta",
+          "company_size": 20,
+          "contact_id": "fixture:contact:beta",
+          "contact_role": "synthetic-owner",
+          "contact_verified": true,
+          "country": "ZZ",
+          "email": "beta@example.test",
+          "industry": "synthetic-automation",
+          "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+          "legal_basis": {
+            "approved": true,
+            "channel": "email",
+            "country": "ZZ",
+            "evidence_ref": "fixture:not-real-consent:beta",
+            "expires_at": "2027-01-01T00:00:00Z"
+          },
+          "source_observed_at": "2026-10-31T08:00:00Z",
+          "source_url": "fixture:source:beta",
+          "source_verified": true
+        },
+        "state": "STOPPED",
+        "qualified": 1,
+        "contact_allowed": 0,
+        "version": 3,
+        "created_at": "2026-10-31T09:00:00Z",
+        "first_outbound_at": "2026-10-31T09:00:10Z",
+        "last_outbound_at": "2026-10-31T09:00:10Z",
+        "followups": 0
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "be79e54f-80c6-5cfe-a914-060e3687341a",
+        "contact_key": "01bc5213e0e8457bb35bc12e9622f67e814b4695cb92e8496962b88d888f988f",
+        "payload": {
+          "company_name": "SYNTHETIC company gamma",
+          "company_size": 20,
+          "contact_id": "fixture:contact:gamma",
+          "contact_role": "synthetic-owner",
+          "contact_verified": true,
+          "country": "ZZ",
+          "email": "gamma@example.test",
+          "industry": "synthetic-automation",
+          "lead_id": "be79e54f-80c6-5cfe-a914-060e3687341a",
+          "legal_basis": {
+            "approved": false,
+            "channel": "email",
+            "country": "ZZ",
+            "evidence_ref": "fixture:not-real-consent:gamma",
+            "expires_at": "2027-01-01T00:00:00Z"
+          },
+          "source_observed_at": "2026-10-31T08:00:00Z",
+          "source_url": "fixture:source:gamma",
+          "source_verified": true
+        },
+        "state": "REVIEW",
+        "qualified": 1,
+        "contact_allowed": 0,
+        "version": 0,
+        "created_at": "2026-10-31T09:00:00Z",
+        "first_outbound_at": null,
+        "last_outbound_at": null,
+        "followups": 0
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "contact_key": "35050d13ddb2cdd54b80f9ed65a029f7b8efb1b7b852173d5826718e252a52a6",
+        "payload": {
+          "company_name": "SYNTHETIC company delta",
+          "company_size": 20,
+          "contact_id": "fixture:contact:delta",
+          "contact_role": "synthetic-owner",
+          "contact_verified": true,
+          "country": "ZZ",
+          "email": "delta@example.test",
+          "industry": "synthetic-automation",
+          "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+          "legal_basis": {
+            "approved": true,
+            "channel": "email",
+            "country": "ZZ",
+            "evidence_ref": "fixture:not-real-consent:delta",
+            "expires_at": "2027-01-01T00:00:00Z"
+          },
+          "source_observed_at": "2026-10-31T08:00:00Z",
+          "source_url": "fixture:source:delta",
+          "source_verified": true
+        },
+        "state": "RECONCILE",
+        "qualified": 1,
+        "contact_allowed": 1,
+        "version": 2,
+        "created_at": "2026-10-31T09:00:00Z",
+        "first_outbound_at": null,
+        "last_outbound_at": null,
+        "followups": 0
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "contact_key": "0c3e40806795f8aac122a2328147caed6151fd4bfe23597d77a291001491b5a6",
+        "payload": {
+          "company_name": "SYNTHETIC company alpha",
+          "company_size": 20,
+          "contact_id": "fixture:contact:alpha",
+          "contact_role": "synthetic-owner",
+          "contact_verified": true,
+          "country": "ZZ",
+          "email": "alpha@example.test",
+          "industry": "synthetic-automation",
+          "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+          "legal_basis": {
+            "approved": true,
+            "channel": "email",
+            "country": "ZZ",
+            "evidence_ref": "fixture:not-real-consent:alpha",
+            "expires_at": "2027-01-01T00:00:00Z"
+          },
+          "source_observed_at": "2026-10-31T08:00:00Z",
+          "source_url": "fixture:source:alpha",
+          "source_verified": true
+        },
+        "state": "MANAGER_ACCEPTED",
+        "qualified": 1,
+        "contact_allowed": 1,
+        "version": 7,
+        "created_at": "2026-10-31T09:00:00Z",
+        "first_outbound_at": "2026-10-31T09:00:10Z",
+        "last_outbound_at": "2026-10-31T09:02:00Z",
+        "followups": 0
+      }
+    ],
+    "outbox": [
+      {
+        "action_id": "draft-313ebb43bbb564becd21fa5255e78c65bd18617d300d0e6487d7677387f809c1",
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "INITIAL",
+        "ordinal": 0,
+        "status": "DELIVERED",
+        "payload": {
+          "body": "SYNTHETIC OFFLINE EXAMPLE. Would you like information about this demonstration?\nThis is a synthetic offline workflow demonstration.",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "profile_hash": "eff348da8c9dea650a70558bbc997950373e34a0dbc930eff04c7243bedf544a",
+          "recipient": "beta@example.test",
+          "simulation": true
+        },
+        "created_at": "2026-10-31T09:00:00Z"
+      },
+      {
+        "action_id": "draft-8ce16e07038b0bcf27f0c553f64b0a8ebb48750d7a6ed2f0bcdc60f67d32c3f5",
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "INITIAL",
+        "ordinal": 0,
+        "status": "UNKNOWN",
+        "payload": {
+          "body": "SYNTHETIC OFFLINE EXAMPLE. Would you like information about this demonstration?\nThis is a synthetic offline workflow demonstration.",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "profile_hash": "eff348da8c9dea650a70558bbc997950373e34a0dbc930eff04c7243bedf544a",
+          "recipient": "delta@example.test",
+          "simulation": true
+        },
+        "created_at": "2026-10-31T09:00:00Z"
+      },
+      {
+        "action_id": "draft-c204c483bf327fea8b43b3b7027d9390ee50295ecbb87a4f64088e60153a5d37",
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "INITIAL",
+        "ordinal": 0,
+        "status": "DELIVERED",
+        "payload": {
+          "body": "SYNTHETIC OFFLINE EXAMPLE. Would you like information about this demonstration?\nThis is a synthetic offline workflow demonstration.",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "profile_hash": "eff348da8c9dea650a70558bbc997950373e34a0dbc930eff04c7243bedf544a",
+          "recipient": "alpha@example.test",
+          "simulation": true
+        },
+        "created_at": "2026-10-31T09:00:00Z"
+      },
+      {
+        "action_id": "draft-c6bbbe3a1f40b6f9353953ff660f4923b0d5bf26b27632d5dfc99e7a410b867c",
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "INITIAL",
+        "ordinal": 0,
+        "status": "DELIVERED",
+        "payload": {
+          "body": "SYNTHETIC OFFLINE EXAMPLE. Would you like information about this demonstration?\nThis is a synthetic offline workflow demonstration.",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "profile_hash": "eff348da8c9dea650a70558bbc997950373e34a0dbc930eff04c7243bedf544a",
+          "recipient": "epsilon@example.test",
+          "simulation": true
+        },
+        "created_at": "2026-10-31T09:00:00Z"
+      },
+      {
+        "action_id": "draft-b36ecb065b7ab39b732c3778a5b647dac31b63800625bc63c6e57a1b394951cb",
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "QUESTION",
+        "ordinal": 2,
+        "status": "DELIVERED",
+        "payload": {
+          "body": "SYNTHETIC OFFLINE ANSWER. The approved information is:\nThis is a synthetic offline workflow demonstration.",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "profile_hash": "eff348da8c9dea650a70558bbc997950373e34a0dbc930eff04c7243bedf544a",
+          "recipient": "alpha@example.test",
+          "simulation": true
+        },
+        "created_at": "2026-10-31T09:01:00Z"
+      },
+      {
+        "action_id": "draft-9203465d58c9a83ea7c01da740b0cdc9771ac68b2f82ad006eab1564a294c6c4",
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "FOLLOWUP",
+        "ordinal": 1,
+        "status": "PREPARED",
+        "payload": {
+          "body": "SYNTHETIC OFFLINE FOLLOW-UP. Would you like to continue? You can reply STOP.\nThis is a synthetic offline workflow demonstration.",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "profile_hash": "eff348da8c9dea650a70558bbc997950373e34a0dbc930eff04c7243bedf544a",
+          "recipient": "epsilon@example.test",
+          "simulation": true
+        },
+        "created_at": "2026-11-02T10:00:00Z"
+      }
+    ],
+    "handoffs": [
+      {
+        "handoff_id": "handoff-41625901900acc5353a1cd990e9d14e21a66b7bd7ea5d8ded7449ca62b6ed2f3",
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "content_sha256": "d0c4b7870b7f27d99d86ab588a72338ae5e5aaffa8b17173667d853316517f8b",
+        "recipient_ref": "66666666-6666-4666-8666-666666666666",
+        "intent": {
+          "code": "OK",
+          "content_sha256": "d0c4b7870b7f27d99d86ab588a72338ae5e5aaffa8b17173667d853316517f8b",
+          "context": {
+            "client_id": "11111111-1111-4111-8111-111111111111",
+            "content_sha256": "d0c4b7870b7f27d99d86ab588a72338ae5e5aaffa8b17173667d853316517f8b",
+            "delivery_status": "NOT_DISPATCHED",
+            "facts": [
+              {
+                "fact_id": "fixture-fact-1",
+                "source_ref": "fixture:synthetic-product-description",
+                "text": "This is a synthetic offline workflow demonstration."
+              }
+            ],
+            "handoff_event_id": "handoff-41625901900acc5353a1cd990e9d14e21a66b7bd7ea5d8ded7449ca62b6ed2f3",
+            "handoff_id": "handoff-41625901900acc5353a1cd990e9d14e21a66b7bd7ea5d8ded7449ca62b6ed2f3",
+            "history": [
+              {
+                "actor": "AUTOMATION",
+                "body": "SYNTHETIC OFFLINE EXAMPLE. Would you like information about this demonstration?\nThis is a synthetic offline workflow demonstration.",
+                "client_id": "11111111-1111-4111-8111-111111111111",
+                "direction": "OUTBOUND",
+                "fact_ids": [
+                  "fixture-fact-1"
+                ],
+                "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+                "mailbox_ref": "33333333-3333-4333-8333-333333333333",
+                "material_ids": [],
+                "message_id": "draft-c204c483bf327fea8b43b3b7027d9390ee50295ecbb87a4f64088e60153a5d37",
+                "runtime_campaign_id": "22222222-2222-4222-8222-222222222222",
+                "sequence": 1,
+                "thread_id": "44444444-4444-4444-8444-444444444444ee50c7eb-c5e0-5693-b738-d9597052551f"
+              },
+              {
+                "actor": "BUYER",
+                "body": "What is included?",
+                "client_id": "11111111-1111-4111-8111-111111111111",
+                "direction": "INBOUND",
+                "fact_ids": [],
+                "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+                "mailbox_ref": "33333333-3333-4333-8333-333333333333",
+                "material_ids": [],
+                "message_id": "message-alpha-1",
+                "runtime_campaign_id": "22222222-2222-4222-8222-222222222222",
+                "sequence": 2,
+                "thread_id": "44444444-4444-4444-8444-444444444444ee50c7eb-c5e0-5693-b738-d9597052551f"
+              },
+              {
+                "actor": "AUTOMATION",
+                "body": "SYNTHETIC OFFLINE ANSWER. The approved information is:\nThis is a synthetic offline workflow demonstration.",
+                "client_id": "11111111-1111-4111-8111-111111111111",
+                "direction": "OUTBOUND",
+                "fact_ids": [
+                  "fixture-fact-1"
+                ],
+                "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+                "mailbox_ref": "33333333-3333-4333-8333-333333333333",
+                "material_ids": [],
+                "message_id": "draft-b36ecb065b7ab39b732c3778a5b647dac31b63800625bc63c6e57a1b394951cb",
+                "runtime_campaign_id": "22222222-2222-4222-8222-222222222222",
+                "sequence": 3,
+                "thread_id": "44444444-4444-4444-8444-444444444444ee50c7eb-c5e0-5693-b738-d9597052551f"
+              },
+              {
+                "actor": "BUYER",
+                "body": "I want to discuss purchasing this demonstration.",
+                "client_id": "11111111-1111-4111-8111-111111111111",
+                "direction": "INBOUND",
+                "fact_ids": [],
+                "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+                "mailbox_ref": "33333333-3333-4333-8333-333333333333",
+                "material_ids": [],
+                "message_id": "message-alpha-2",
+                "runtime_campaign_id": "22222222-2222-4222-8222-222222222222",
+                "sequence": 4,
+                "thread_id": "44444444-4444-4444-8444-444444444444ee50c7eb-c5e0-5693-b738-d9597052551f"
+              }
+            ],
+            "language_pack_version": "fixture-v1",
+            "language_packs": {
+              "en-GB": "fixture-v1"
+            },
+            "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+            "locale": "en-GB",
+            "mailbox_ref": "33333333-3333-4333-8333-333333333333",
+            "materials": [],
+            "next_step": "Проверить пакет вручную. Отправка и принятие менеджером не выполнены.",
+            "policy_version": "fixture-v1",
+            "product_id": "55555555-5555-4555-8555-555555555555",
+            "reason": "INTEREST",
+            "runtime_campaign_id": "22222222-2222-4222-8222-222222222222",
+            "schema_version": "FIRST_HANDOFF_CONTEXT_V1",
+            "status": "ACTIVE",
+            "summary": "Синтетический пакет передачи. Основание интереса: message-alpha-2",
+            "thread_id": "44444444-4444-4444-8444-444444444444ee50c7eb-c5e0-5693-b738-d9597052551f"
+          },
+          "handoff_id": "handoff-41625901900acc5353a1cd990e9d14e21a66b7bd7ea5d8ded7449ca62b6ed2f3",
+          "recipient_ref": "66666666-6666-4666-8666-666666666666",
+          "schema_version": "FIRST_HANDOFF_INTENT_V1",
+          "status": "PREPARED"
+        },
+        "status": "MANAGER_ACCEPTED",
+        "created_at": "2026-10-31T09:03:00Z",
+        "due_at": "2026-10-31T10:03:00Z"
+      }
+    ],
+    "history": [
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "message_id": "draft-c6bbbe3a1f40b6f9353953ff660f4923b0d5bf26b27632d5dfc99e7a410b867c",
+        "sequence": 1,
+        "message": {
+          "actor": "SYSTEM",
+          "body": "SYNTHETIC OFFLINE EXAMPLE. Would you like information about this demonstration?\nThis is a synthetic offline workflow demonstration.",
+          "direction": "OUTBOUND",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "material_ids": [],
+          "message_id": "draft-c6bbbe3a1f40b6f9353953ff660f4923b0d5bf26b27632d5dfc99e7a410b867c",
+          "sequence": 1
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "message_id": "draft-313ebb43bbb564becd21fa5255e78c65bd18617d300d0e6487d7677387f809c1",
+        "sequence": 1,
+        "message": {
+          "actor": "SYSTEM",
+          "body": "SYNTHETIC OFFLINE EXAMPLE. Would you like information about this demonstration?\nThis is a synthetic offline workflow demonstration.",
+          "direction": "OUTBOUND",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "material_ids": [],
+          "message_id": "draft-313ebb43bbb564becd21fa5255e78c65bd18617d300d0e6487d7677387f809c1",
+          "sequence": 1
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "message_id": "message-beta-1",
+        "sequence": 2,
+        "message": {
+          "actor": "CLIENT",
+          "body": "STOP",
+          "direction": "INBOUND",
+          "fact_ids": [],
+          "material_ids": [],
+          "message_id": "message-beta-1",
+          "sequence": 2
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "message_id": "message-beta-2",
+        "sequence": 3,
+        "message": {
+          "actor": "CLIENT",
+          "body": "I want to discuss purchasing this demonstration.",
+          "direction": "INBOUND",
+          "fact_ids": [],
+          "material_ids": [],
+          "message_id": "message-beta-2",
+          "sequence": 3
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "message_id": "draft-c204c483bf327fea8b43b3b7027d9390ee50295ecbb87a4f64088e60153a5d37",
+        "sequence": 1,
+        "message": {
+          "actor": "SYSTEM",
+          "body": "SYNTHETIC OFFLINE EXAMPLE. Would you like information about this demonstration?\nThis is a synthetic offline workflow demonstration.",
+          "direction": "OUTBOUND",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "material_ids": [],
+          "message_id": "draft-c204c483bf327fea8b43b3b7027d9390ee50295ecbb87a4f64088e60153a5d37",
+          "sequence": 1
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "message_id": "message-alpha-1",
+        "sequence": 2,
+        "message": {
+          "actor": "CLIENT",
+          "body": "What is included?",
+          "direction": "INBOUND",
+          "fact_ids": [],
+          "material_ids": [],
+          "message_id": "message-alpha-1",
+          "sequence": 2
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "message_id": "draft-b36ecb065b7ab39b732c3778a5b647dac31b63800625bc63c6e57a1b394951cb",
+        "sequence": 3,
+        "message": {
+          "actor": "SYSTEM",
+          "body": "SYNTHETIC OFFLINE ANSWER. The approved information is:\nThis is a synthetic offline workflow demonstration.",
+          "direction": "OUTBOUND",
+          "fact_ids": [
+            "fixture-fact-1"
+          ],
+          "material_ids": [],
+          "message_id": "draft-b36ecb065b7ab39b732c3778a5b647dac31b63800625bc63c6e57a1b394951cb",
+          "sequence": 3
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "message_id": "message-alpha-2",
+        "sequence": 4,
+        "message": {
+          "actor": "CLIENT",
+          "body": "I want to discuss purchasing this demonstration.",
+          "direction": "INBOUND",
+          "fact_ids": [],
+          "material_ids": [],
+          "message_id": "message-alpha-2",
+          "sequence": 4
+        }
+      }
+    ],
+    "audit": [
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "LEAD_INGESTED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "QUALIFIED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "CONTACT_ALLOWED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "INGEST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "DRAFT_PREPARED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "action_id": "draft-c204c483bf327fea8b43b3b7027d9390ee50295ecbb87a4f64088e60153a5d37",
+          "kind": "INITIAL",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "PREPARE_INITIAL"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "SEND_RECEIPT",
+        "occurred_at": "2026-10-31T09:00:10Z",
+        "payload": {
+          "action_id": "draft-c204c483bf327fea8b43b3b7027d9390ee50295ecbb87a4f64088e60153a5d37",
+          "simulation": true,
+          "status": "DELIVERED"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:10Z",
+        "payload": {
+          "operation": "SEND_RECEIPT"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:20Z",
+        "payload": {
+          "operation": "COST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "LEAD_INGESTED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "QUALIFIED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "CONTACT_ALLOWED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "INGEST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "DRAFT_PREPARED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "action_id": "draft-313ebb43bbb564becd21fa5255e78c65bd18617d300d0e6487d7677387f809c1",
+          "kind": "INITIAL",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "PREPARE_INITIAL"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "SEND_RECEIPT",
+        "occurred_at": "2026-10-31T09:00:10Z",
+        "payload": {
+          "action_id": "draft-313ebb43bbb564becd21fa5255e78c65bd18617d300d0e6487d7677387f809c1",
+          "simulation": true,
+          "status": "DELIVERED"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:10Z",
+        "payload": {
+          "operation": "SEND_RECEIPT"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:20Z",
+        "payload": {
+          "operation": "COST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "be79e54f-80c6-5cfe-a914-060e3687341a",
+        "kind": "LEAD_INGESTED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "be79e54f-80c6-5cfe-a914-060e3687341a",
+        "kind": "QUALIFIED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "be79e54f-80c6-5cfe-a914-060e3687341a",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "INGEST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "be79e54f-80c6-5cfe-a914-060e3687341a",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "PREPARE_INITIAL"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "LEAD_INGESTED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "QUALIFIED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "CONTACT_ALLOWED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "INGEST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "DRAFT_PREPARED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "action_id": "draft-8ce16e07038b0bcf27f0c553f64b0a8ebb48750d7a6ed2f0bcdc60f67d32c3f5",
+          "kind": "INITIAL",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "PREPARE_INITIAL"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "SEND_RECEIPT",
+        "occurred_at": "2026-10-31T09:00:10Z",
+        "payload": {
+          "action_id": "draft-8ce16e07038b0bcf27f0c553f64b0a8ebb48750d7a6ed2f0bcdc60f67d32c3f5",
+          "simulation": true,
+          "status": "UNKNOWN"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:10Z",
+        "payload": {
+          "operation": "SEND_RECEIPT"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:20Z",
+        "payload": {
+          "operation": "COST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "LEAD_INGESTED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "QUALIFIED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {}
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "CONTACT_ALLOWED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "INGEST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "DRAFT_PREPARED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "action_id": "draft-c6bbbe3a1f40b6f9353953ff660f4923b0d5bf26b27632d5dfc99e7a410b867c",
+          "kind": "INITIAL",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:00Z",
+        "payload": {
+          "operation": "PREPARE_INITIAL"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "SEND_RECEIPT",
+        "occurred_at": "2026-10-31T09:00:10Z",
+        "payload": {
+          "action_id": "draft-c6bbbe3a1f40b6f9353953ff660f4923b0d5bf26b27632d5dfc99e7a410b867c",
+          "simulation": true,
+          "status": "DELIVERED"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:10Z",
+        "payload": {
+          "operation": "SEND_RECEIPT"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:00:20Z",
+        "payload": {
+          "operation": "COST"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "REPLY_RECEIVED",
+        "occurred_at": "2026-10-31T09:01:00Z",
+        "payload": {
+          "intent": "QUESTION",
+          "message_id": "message-alpha-1"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "DRAFT_PREPARED",
+        "occurred_at": "2026-10-31T09:01:00Z",
+        "payload": {
+          "action_id": "draft-b36ecb065b7ab39b732c3778a5b647dac31b63800625bc63c6e57a1b394951cb",
+          "kind": "QUESTION",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:01:00Z",
+        "payload": {
+          "operation": "REPLY"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "SEND_RECEIPT",
+        "occurred_at": "2026-10-31T09:02:00Z",
+        "payload": {
+          "action_id": "draft-b36ecb065b7ab39b732c3778a5b647dac31b63800625bc63c6e57a1b394951cb",
+          "simulation": true,
+          "status": "DELIVERED"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:02:00Z",
+        "payload": {
+          "operation": "SEND_RECEIPT"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "REPLY_RECEIVED",
+        "occurred_at": "2026-10-31T09:03:00Z",
+        "payload": {
+          "intent": "INTEREST",
+          "message_id": "message-alpha-2"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "INTEREST_CONFIRMED",
+        "occurred_at": "2026-10-31T09:03:00Z",
+        "payload": {
+          "classification_source": "SYNTHETIC_FIXTURE",
+          "evidence_quote": "I want to discuss purchasing this demonstration.",
+          "message_id": "message-alpha-2",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "HANDOFF_PREPARED",
+        "occurred_at": "2026-10-31T09:03:00Z",
+        "payload": {
+          "content_sha256": "d0c4b7870b7f27d99d86ab588a72338ae5e5aaffa8b17173667d853316517f8b",
+          "handoff_id": "handoff-41625901900acc5353a1cd990e9d14e21a66b7bd7ea5d8ded7449ca62b6ed2f3",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:03:00Z",
+        "payload": {
+          "operation": "REPLY"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "HANDOFF_RECEIPT",
+        "occurred_at": "2026-10-31T09:04:00Z",
+        "payload": {
+          "handoff_id": "handoff-41625901900acc5353a1cd990e9d14e21a66b7bd7ea5d8ded7449ca62b6ed2f3",
+          "simulation": true,
+          "status": "DELIVERED"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:04:00Z",
+        "payload": {
+          "operation": "HANDOFF_RECEIPT"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "MANAGER_ACCEPTED",
+        "occurred_at": "2026-10-31T09:05:00Z",
+        "payload": {
+          "actor_ref": "66666666-6666-4666-8666-666666666666",
+          "handoff_id": "handoff-41625901900acc5353a1cd990e9d14e21a66b7bd7ea5d8ded7449ca62b6ed2f3",
+          "identity_source": "LOCAL_UNAUTHENTICATED_FIXTURE",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "ee50c7eb-c5e0-5693-b738-d9597052551f",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:05:00Z",
+        "payload": {
+          "operation": "MANAGER_ACK"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "REPLY_RECEIVED",
+        "occurred_at": "2026-10-31T09:01:00Z",
+        "payload": {
+          "intent": "STOP",
+          "message_id": "message-beta-1"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "STOP_APPLIED",
+        "occurred_at": "2026-10-31T09:01:00Z",
+        "payload": {
+          "reason": "STOP"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:01:00Z",
+        "payload": {
+          "operation": "REPLY"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "REPLY_RECEIVED",
+        "occurred_at": "2026-10-31T09:02:00Z",
+        "payload": {
+          "intent": "INTEREST",
+          "message_id": "message-beta-2"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-10-31T09:02:00Z",
+        "payload": {
+          "operation": "REPLY"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "adcd7f2e-d437-5b52-b8e9-7a34d2cf400b",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-11-03T09:00:00Z",
+        "payload": {
+          "operation": "FOLLOWUP"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "e46e8f80-7bb5-5f6b-8107-3acf8eaec282",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-11-03T09:00:00Z",
+        "payload": {
+          "operation": "FOLLOWUP"
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "DRAFT_PREPARED",
+        "occurred_at": "2026-11-02T10:00:00Z",
+        "payload": {
+          "action_id": "draft-9203465d58c9a83ea7c01da740b0cdc9771ac68b2f82ad006eab1564a294c6c4",
+          "kind": "FOLLOWUP",
+          "simulation": true
+        }
+      },
+      {
+        "campaign_id": "22222222-2222-4222-8222-222222222222",
+        "lead_id": "2dfaee79-d86a-5478-971b-6e7072779ed4",
+        "kind": "COMMAND_PROCESSED",
+        "occurred_at": "2026-11-02T10:00:00Z",
+        "payload": {
+          "operation": "FOLLOWUP"
+        }
+      }
+    ]
+  },
+  "pending_profile": {
+    "valid": true,
+    "errors": [],
+    "unresolved": [
+      "approval.approved_by",
+      "product.product_id",
+      "product.name",
+      "product.price",
+      "product.terms",
+      "product.approved_facts",
+      "target.countries",
+      "target.industries",
+      "target.contact_roles",
+      "target.min_company_size",
+      "target.max_company_size",
+      "legal.approval_ref",
+      "legal.valid_until",
+      "handoff.recipient_ref",
+      "handoff.approval_ref",
+      "pilot.budget"
+    ],
+    "live_ready": false
+  }
+}

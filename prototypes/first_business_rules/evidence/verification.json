@@ -1,0 +1,46 @@
+{
+  "status": "PASS_LOCAL_PROTOTYPE_ONLY",
+  "python": "3.12.14",
+  "command": "python3 -B -m unittest discover -s tests -v",
+  "exit_code": 0,
+  "tests_run": 97,
+  "groups": {
+    "adapters": 12,
+    "cli": 3,
+    "engine": 21,
+    "input_regressions": 11,
+    "metrics": 21,
+    "policy": 19,
+    "handoff_replay_regressions": 10
+  },
+  "scope": "prototypes/first_business_rules only",
+  "network_in_demo_cli_test": "socket.socket and socket.getaddrinfo patched to raise",
+  "demo": {
+    "mode": "SIMULATION",
+    "leads": 5,
+    "handoffs_prepared": 1,
+    "manager_accepted_fixture": 1,
+    "real_messages_sent": 0,
+    "real_business_evidence": false
+  },
+  "production_runtime_tests_run": false,
+  "deployment_performed": false,
+  "cp12_accepted_by_this_work": false,
+  "remaining": [
+    "approved commercial profile",
+    "real AI provider and quality evaluation",
+    "trusted source and consent verification",
+    "PostgreSQL/runtime adapters",
+    "authenticated manager identity",
+    "authorized provider integration and pilot"
+  ],
+  "standalone_transfer_verification": {
+    "date": "2026-10-31",
+    "destination": "dimitry8st-prog/Chernovik-PR-1.",
+    "command": "python3 -B -m unittest discover -s tests -q",
+    "tests_run": 97,
+    "exit_code": 0,
+    "public_dependency_blobs_verified": true,
+    "private_git_history_transferred": false
+  }
+}

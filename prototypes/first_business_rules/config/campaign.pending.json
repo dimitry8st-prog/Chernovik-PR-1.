@@ -1,0 +1,22 @@
+{
+  "schema_version": "FIRST_BUSINESS_PROFILE_V1",
+  "profile_id": "campaign-awaiting-owner-input",
+  "version": "proposal-v1",
+  "execution_mode": "SIMULATION",
+  "approval": {"status": "PENDING_OWNER_INPUT", "approved_by": null},
+  "campaign": {
+    "client_id": "11111111-1111-4111-8111-111111111111",
+    "runtime_campaign_id": "22222222-2222-4222-8222-222222222222",
+    "mailbox_ref": "33333333-3333-4333-8333-333333333333",
+    "thread_prefix": "44444444-4444-4444-8444-444444444444",
+    "locale": "en-GB",
+    "language_pack_version": "fixture-v1"
+  },
+  "product": {"product_id": null, "name": null, "price": null, "terms": null, "approved_facts": []},
+  "target": {"countries": [], "industries": [], "contact_roles": [], "min_company_size": null, "max_company_size": null},
+  "legal": {"channel": "email", "approval_ref": null, "valid_until": null},
+  "follow_up": {"offset_hours": [48, 120], "max_attempts": 2},
+  "handoff": {"recipient_ref": null, "approval_ref": null, "ack_timeout_minutes": 60},
+  "ai": {"min_confidence": 0.9},
+  "pilot": {"currency": "DEMO", "budget": null}
+}

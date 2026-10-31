@@ -1,0 +1,41 @@
+{
+  "checked_date": "2026-10-31",
+  "central": {
+    "repository": "angle-theory-studio/sales-manager-first",
+    "commit": "c4964b4be87d3148a362f9a4b527ac475fca04b9",
+    "changed_existing_files": false
+  },
+  "reviewed_repositories": [
+    {
+      "repository": "dimitry8st-prog/Sales-Manager-FIRST-Handoff-F1-09",
+      "commit": "08eecd4e07e172daf76f18cbf8a36b85dde3950d"
+    },
+    {
+      "repository": "dimitry8st-prog/Sales-Manager-FIRST-Handoff-F1-19",
+      "commit": "bce10f9e8e5dd072151be780fc06d6f16b52f719"
+    },
+    {
+      "repository": "dimitry8st-prog/Sales-Manager-FIRST-Catalog-Config-Resolver-SFA-P38B",
+      "commit": "7d1f90921eaeb5e46bc7c73ebd891b3f346bd6ad"
+    },
+    {
+      "repository": "dimitry8st-prog/Sales-Manager-FIRST-Followup-Schedule-Basis-SFA-P41",
+      "commit": "3fa3911ac3bea3a3864277e209d56b9361d1bbdd"
+    },
+    {
+      "repository": "dimitry8st-prog/BOS-Pro_30.10.2026",
+      "commit": "9b46b603d9304e331ab51bf9f7fdecc4bc11ea19",
+      "role": "Documentation reference only; not a runtime dependency"
+    }
+  ],
+  "original_dependency_git_blobs": {
+    "SOURCE/strativon-sales-runtime-r3-2-auto/sales_first_handoff.py": "512e08c459ab98a3fb1d29321aa3170fddb49adb",
+    "SOURCE/strativon-sales-runtime-r3-2-auto/sales_handoff_intent.py": "990e697bd37ff1c04a79129ba4bacdfd7d38b208",
+    "SOURCE/strativon-sales-runtime-r3-2-auto/sales_first_send_receipt.py": "5e40fcb28e29c247475537dc2940624926e91e16"
+  },
+  "notes": [
+    "Original SOURCE dependency bytes verified by Git blob SHA before final tests.",
+    "F1-09/F1-19 are called unchanged. Send-receipt source is inspected, not wired as a production sender.",
+    "Catalog/schedule hooks are documented, not installed."
+  ]
+}
